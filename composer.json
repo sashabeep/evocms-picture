@@ -1,0 +1,22 @@
+{
+    "name": "sashabeep/evocms-picture",
+    "description": "Picture tag for Blade template",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Sasha Beep"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "EvolutionCMS\\Sashabeep\\": "src"
+        }
+    },
+    "extra": {
+        "laravel" : {
+            "providers": [
+                "EvolutionCMS\\Sashabeep\\PictureServiceProvider"
+            ]
+        }
+    }
+}
