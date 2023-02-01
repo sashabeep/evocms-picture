@@ -7,7 +7,13 @@ use EvolutionCMS\Helpers\Phphthumb;
 class Picture{
 	
 	public function output($data){
-		return(print_r($data,true));
+		return("<hr>".$data."<hr>");
+	}
+
+	public function parseDirectiveData(string $data): array
+	{
+		$out = $data;
+		return $out;
 	}
 
 }
