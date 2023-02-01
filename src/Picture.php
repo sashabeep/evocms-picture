@@ -10,11 +10,5 @@ class Picture{
 		return("<hr>".$data."<hr>");
 	}
 
-	public function parseDirectiveData(string $data): array
-	{
-		$out = $data;
-		return $out;
-	}
-
 }
 ?>

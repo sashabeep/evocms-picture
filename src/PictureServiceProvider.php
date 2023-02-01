@@ -16,8 +16,7 @@ use Illuminate\Support\Facades\Blade;
 		//picture directive
 		Blade::directive('picture', function($args){
 			$picture = new Picture();
-			$data = $picture->parseDirectiveData($args);
-			return $picture->output($data);
+			return $picture->output($args);
 		});
 	}
 }
