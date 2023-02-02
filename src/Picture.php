@@ -6,7 +6,7 @@ use EvolutionCMS\Helpers\Phphthumb;
 
 class Picture{
 	
-	public function output($data){
+	public function output(string $data){
 		return("<hr>".$data."<hr>");
 	}
 
