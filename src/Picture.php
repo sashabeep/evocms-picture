@@ -44,7 +44,8 @@ class Picture{
 			$image_2x = \Helper::phpThumb($optsArr['file'], $thumbOpts2x_string);
 			$optsArr['image_2x'] = $image_2x;
 
-			return(\View::make('evocms-picture::picture')->with($optsArr));
+			//return(view('evopicture::picture'));
+			return view('evopicture::picture');
 			
 		}
 	}
