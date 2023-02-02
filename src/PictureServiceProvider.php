@@ -9,14 +9,12 @@ use Illuminate\Support\Facades\Blade;
 
 class PictureServiceProvider extends ServiceProvider
 {
-	protected $namespace = 'evopicture';
 	public $evo;
+	public function boot(){
+		$this->loadViewsFrom(__DIR__.'/../views', 'evopicture');
+	}
 	public function register(){
 		$this->evo = EvolutionCMS();
-	}
-	public function boot(){
-		$this->loadViewsFrom(__DIR__ . '/../views', "evopicture");
-		
 		//picture directive
 		Blade::directive('picture', function($args){
 			$picture = new Picture();
@@ -24,6 +22,4 @@ class PictureServiceProvider extends ServiceProvider
 			return $picture->output($opts);
 		});
 	}
-
-	
 }
