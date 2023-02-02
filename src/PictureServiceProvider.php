@@ -7,16 +7,20 @@ use EvolutionCMS;
 use EvolutionCMS\Sashabeep\Picture;
 use Illuminate\Support\Facades\Blade;
 
-	class PictureServiceProvider extends ServiceProvider
-	{
+class PictureServiceProvider extends ServiceProvider
+{
+	protected $namespace = 'evocms-picture';
 	public $evo;
-	public function register()
-	{
+	public function register(){
 		$this->evo = EvolutionCMS();
 		//picture directive
 		Blade::directive('picture', function($args){
 			$picture = new Picture();
-			return $picture->output($args);
+			$opts = $picture->parseProps($args);
+			return $picture->output($opts);
 		});
+	}
+	public function boot(){
+		$this->loadViewsFrom(__DIR__ . '/../views', $this->namespace);
 	}
 }
