@@ -6,8 +6,8 @@ use EvolutionCMS\Helpers\Phphthumb;
 
 class Picture{
 	
-	public function output(string $data){
-		return("<hr>".$data."<hr>");
+	public function output(array $options){
+		return("<hr>".var_dump($options)."<hr>");
 	}
 
 }
